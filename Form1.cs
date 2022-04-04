@@ -31,21 +31,29 @@ namespace WindowsFormsApp1
             lstvDados.Columns.Add("IP(S) PUBLICO(S)", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
             lstvDados.Columns.Add("SERVIDOR RDP", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
             lstvDados.Columns.Add("PORTA LOCAL", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
-            
+
         }
         public void CelulasListView()
         {
             Clientes c1 = new Clientes();
             List<Clientes> lista = new List<Clientes>(c1.ListarClientes());
             lstvDados.SelectedItems.Clear();
-            ListViewItem items = new ListViewItem();
+            ListViewItem item = null;
             foreach (var x in lista)
             {
-                items.Text = x.ID.ToString();
-                items.SubItems.Add(x.Nome.ToString());
+                item = new ListViewItem();
+                item.Text = x.ID.ToString();
+                item.SubItems.Add(x.Nome.ToString());
+                lstvDados.Items.Add(item);
             }
-            lstvDados.Items.Add(items);
+            
 
+        }
+
+        private void cadastrarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2();
+            frm2.ShowDialog();
         }
     }
 }
