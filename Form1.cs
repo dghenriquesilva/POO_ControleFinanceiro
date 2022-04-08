@@ -55,5 +55,10 @@ namespace WindowsFormsApp1
             Form2 frm2 = new Form2();
             frm2.ShowDialog();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

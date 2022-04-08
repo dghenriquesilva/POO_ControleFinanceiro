@@ -31,9 +31,9 @@ namespace WindowsFormsApp1
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lstvDados = new System.Windows.Forms.ListView();
-            this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
             this.menuStrip1.Size = new System.Drawing.Size(1312, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // arquivoToolStripMenuItem
             // 
@@ -56,6 +57,13 @@ namespace WindowsFormsApp1
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // cadastrarClienteToolStripMenuItem
+            // 
+            this.cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
+            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cadastrarClienteToolStripMenuItem.Text = "Cadastrar Cliente";
+            this.cadastrarClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarClienteToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -75,13 +83,6 @@ namespace WindowsFormsApp1
             this.lstvDados.TabIndex = 1;
             this.lstvDados.UseCompatibleStateImageBehavior = false;
             this.lstvDados.View = System.Windows.Forms.View.Details;
-            // 
-            // cadastrarClienteToolStripMenuItem
-            // 
-            this.cadastrarClienteToolStripMenuItem.Name = "cadastrarClienteToolStripMenuItem";
-            this.cadastrarClienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cadastrarClienteToolStripMenuItem.Text = "Cadastrar Cliente";
-            this.cadastrarClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarClienteToolStripMenuItem_Click);
             // 
             // Form1
             // 

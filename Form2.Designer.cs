@@ -34,8 +34,8 @@ namespace WindowsFormsApp1
             this.txtIps = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtRdp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtrdp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNome
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(210, 241);
+            this.button1.Location = new System.Drawing.Point(207, 309);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 36);
             this.button1.TabIndex = 1;
@@ -80,13 +80,6 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 4;
             this.label2.Text = "IP Público (separe com \";\")";
             // 
-            // txtRdp
-            // 
-            this.txtRdp.Location = new System.Drawing.Point(24, 178);
-            this.txtRdp.Name = "txtRdp";
-            this.txtRdp.Size = new System.Drawing.Size(381, 22);
-            this.txtRdp.TabIndex = 2;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -96,16 +89,24 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 4;
             this.label3.Text = "Servidores RDP (separe com \";\")";
             // 
+            // txtrdp
+            // 
+            this.txtrdp.Location = new System.Drawing.Point(24, 190);
+            this.txtrdp.Multiline = true;
+            this.txtrdp.Name = "txtrdp";
+            this.txtrdp.Size = new System.Drawing.Size(378, 74);
+            this.txtrdp.TabIndex = 5;
+            // 
             // Form2
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 295);
+            this.ClientSize = new System.Drawing.Size(426, 367);
+            this.Controls.Add(this.txtrdp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtRdp);
             this.Controls.Add(this.txtIps);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNome);
@@ -126,7 +127,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox txtIps;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtRdp;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtrdp;
     }
 }

@@ -26,10 +26,12 @@ namespace WindowsFormsApp1
         {
             Clientes c1 = new Clientes();
             c1.Nome = txtNome.Text;
-           if (c1.SalvarCliente())
+            c1.IP_Publico = txtIps.Text;
+            c1.Servidores.Enderecos = txtrdp.Text;
+            if (c1.SalvarCliente())
             {
-                MessageBox.Show("Cliente salvo com èxito!");
 
+                MessageBox.Show("Cliente salvo com èxito!");
             }
             else
             {
