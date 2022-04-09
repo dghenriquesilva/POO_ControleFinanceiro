@@ -20,31 +20,24 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ColunasListView();
-            CelulasListView();
-        }
-        public void ColunasListView()
-        {
 
-            lstvDados.Columns.Add("ID", 5 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
-            lstvDados.Columns.Add("CLIENTE)", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
-            lstvDados.Columns.Add("IP(S) PUBLICO(S)", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
-            lstvDados.Columns.Add("SERVIDOR RDP", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
-            lstvDados.Columns.Add("PORTA LOCAL", 30 * (int)lstvDados.Font.SizeInPoints, HorizontalAlignment.Center);
-
+            ListarClientes();
         }
-        public void CelulasListView()
+
+        public void ListarClientes()
         {
             Clientes c1 = new Clientes();
             List<Clientes> lista = new List<Clientes>(c1.ListarClientes());
-            lstvDados.SelectedItems.Clear();
             ListViewItem item = null;
+            cboClientes.Items.Clear();
             foreach (var x in lista)
             {
-                item = new ListViewItem();
-                item.Text = x.ID.ToString();
-                item.SubItems.Add(x.Nome.ToString());
-                lstvDados.Items.Add(item);
+                //item = new ListViewItem();
+                //item.Text = x.Nome.ToString();
+                //item.SubItems.Add(x.IP_Publico.ToString());
+                
+                cboClientes.Items.Add(x.Nome.ToString());
+               
             }
             
 
@@ -59,6 +52,17 @@ namespace WindowsFormsApp1
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            ListarClientes();
+        }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }

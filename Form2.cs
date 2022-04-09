@@ -38,5 +38,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Erro ao tentar salvar:");
             }
         }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1.ActiveForm.Activate();
+            
+        }
     }
 }
