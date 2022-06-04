@@ -34,11 +34,11 @@ namespace WindowsFormsApp1
             this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.cboClientes = new System.Windows.Forms.ComboBox();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdConectar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,28 @@ namespace WindowsFormsApp1
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Localizar Cliente Salvo";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(355, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "DELETAR";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.button1.Location = new System.Drawing.Point(227, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "EDITAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cboClientes
             // 
@@ -96,15 +118,17 @@ namespace WindowsFormsApp1
             this.cboClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cboClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboClientes.FormattingEnabled = true;
-            this.cboClientes.Location = new System.Drawing.Point(15, 35);
+            this.cboClientes.Location = new System.Drawing.Point(6, 50);
             this.cboClientes.Name = "cboClientes";
-            this.cboClientes.Size = new System.Drawing.Size(325, 265);
+            this.cboClientes.Size = new System.Drawing.Size(472, 249);
             this.cboClientes.TabIndex = 0;
+            this.cboClientes.SelectedIndexChanged += new System.EventHandler(this.cboClientes_SelectedIndexChanged);
+            this.cboClientes.Validated += new System.EventHandler(this.cboClientes_Validated);
             // 
             // cmdCancelar
             // 
             this.cmdCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cmdCancelar.Location = new System.Drawing.Point(316, 374);
+            this.cmdCancelar.Location = new System.Drawing.Point(314, 357);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(182, 38);
             this.cmdCancelar.TabIndex = 2;
@@ -114,30 +138,13 @@ namespace WindowsFormsApp1
             // 
             // cmdConectar
             // 
-            this.cmdConectar.Location = new System.Drawing.Point(114, 374);
+            this.cmdConectar.Location = new System.Drawing.Point(114, 357);
             this.cmdConectar.Name = "cmdConectar";
             this.cmdConectar.Size = new System.Drawing.Size(182, 38);
             this.cmdConectar.TabIndex = 1;
             this.cmdConectar.Text = "Conectar";
             this.cmdConectar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(347, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "EDITAR";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(346, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "DELETAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmdConectar.Click += new System.EventHandler(this.cmdConectar_Click);
             // 
             // Form1
             // 
@@ -145,7 +152,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancelar;
-            this.ClientSize = new System.Drawing.Size(512, 424);
+            this.ClientSize = new System.Drawing.Size(512, 405);
             this.Controls.Add(this.cmdConectar);
             this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.groupBox1);
@@ -157,6 +164,7 @@ namespace WindowsFormsApp1
             this.Text = "Conectar RDP";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.DoubleClick += new System.EventHandler(this.Form1_DoubleClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -172,11 +180,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarClienteToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboClientes;
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.Button cmdConectar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox cboClientes;
     }
 }
 

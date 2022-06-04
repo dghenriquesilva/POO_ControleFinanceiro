@@ -30,13 +30,12 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.cmdGravar = new System.Windows.Forms.Button();
             this.txtIps = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtrdp = new System.Windows.Forms.TextBox();
-            this.cmdCancelar = new System.Windows.Forms.Button();
+            this.cmdGravar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNome
@@ -45,16 +44,6 @@ namespace WindowsFormsApp1
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(381, 22);
             this.txtNome.TabIndex = 0;
-            // 
-            // cmdGravar
-            // 
-            this.cmdGravar.Location = new System.Drawing.Point(27, 295);
-            this.cmdGravar.Name = "cmdGravar";
-            this.cmdGravar.Size = new System.Drawing.Size(182, 38);
-            this.cmdGravar.TabIndex = 1;
-            this.cmdGravar.Text = "Gravar";
-            this.cmdGravar.UseVisualStyleBackColor = true;
-            this.cmdGravar.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtIps
             // 
@@ -97,20 +86,20 @@ namespace WindowsFormsApp1
             this.txtrdp.Name = "txtrdp";
             this.txtrdp.Size = new System.Drawing.Size(378, 74);
             this.txtrdp.TabIndex = 5;
+            this.txtrdp.TextChanged += new System.EventHandler(this.txtrdp_TextChanged);
             // 
-            // cmdCancelar
+            // cmdGravar
             // 
-            this.cmdCancelar.Location = new System.Drawing.Point(223, 295);
-            this.cmdCancelar.Name = "cmdCancelar";
-            this.cmdCancelar.Size = new System.Drawing.Size(182, 38);
-            this.cmdCancelar.TabIndex = 1;
-            this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.UseVisualStyleBackColor = true;
-            this.cmdCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.cmdGravar.Location = new System.Drawing.Point(27, 295);
+            this.cmdGravar.Name = "cmdGravar";
+            this.cmdGravar.Size = new System.Drawing.Size(182, 38);
+            this.cmdGravar.TabIndex = 1;
+            this.cmdGravar.Text = "Gravar";
+            this.cmdGravar.UseVisualStyleBackColor = true;
+            this.cmdGravar.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
-            this.AcceptButton = this.cmdGravar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 367);
@@ -119,7 +108,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIps);
-            this.Controls.Add(this.cmdCancelar);
             this.Controls.Add(this.cmdGravar);
             this.Controls.Add(this.txtNome);
             this.MaximizeBox = false;
@@ -136,12 +124,11 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button cmdGravar;
         private System.Windows.Forms.TextBox txtIps;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtrdp;
-        private System.Windows.Forms.Button cmdCancelar;
+        private System.Windows.Forms.Button cmdGravar;
     }
 }
